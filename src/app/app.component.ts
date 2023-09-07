@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularMaterialChangeTheme';
+  isDarkThemeActive = false;
+
+  constructor(@Inject(DOCUMENT) private document: Document){}
+
+  onChange(newValue: boolean): void {
+    if (newValue == true){
+      this.document.body.classList.add('dark-mode');
+    } 
+    else {
+      this.document.body.classList.remove('dark-mode');
+    }   
+  }
 }

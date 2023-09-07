@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+@import './assets/scss/themes.scss';
+
+html, body, main {height: 100%;}
+body { margin:0;}
