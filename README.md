@@ -1,27 +1,26 @@
-# AngularMaterialChangeTheme
+# Angular Material Change Theme
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+## Introducción 
 
-## Development server
+Este repositorio está formado por un proyecto Angular y la libreria de componentes Material UI. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+En este repositorio he realizado un ejemplo de como poder cambiar el tema de la aplicación de manera dinámica a través de una acción del usuario. En este caso, he puesto un control MatSlideToggle para que cuando el usuario lo cambie, automáticamente se realice la modificación del tema de la aplicación.
 
-## Code scaffolding
+## Explicación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+He seguido los siguientes pasos para completar dicho ejemplo:
 
-## Build
+1. He limpiado el contenido del componente App y le he aplicado una etiqueta main con la clase mat-app-background y dentro de este tag, un componente mat-slide-toggle.
+2. Al componente mat-slide-toggle le he asociado el modelo (ngModel) y he asociado el evento change del control a la función existente en el fichero ts (app.component.ts) del componente App.
+3. En el fichero ts del componente, hay que fijarse que se ha injectado DOCUMENT para poder modificar las clases de estilos del tag body en la función asociada al evento change.
+4. Se ha creado la carpeta y fichero scss/themes.scss en la carpeta assets. Se ha referenciado este fichero desde el fichero src/styles.scss, donde también hemos incluido estilos para darle una mayor altura a la página y eliminar el margen.
+5. En el fichero scss/themes.scss se ha definido las paletas para light y dark. Por defecto, se ha establecido el estilo light para todos los componentes y se ha creado la clase para el modo oscuro que aplicará la paleta oscura.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Conclusión
 
-## Running unit tests
+Para trabajar los temas en un proyecto de Angular + Material UI, hay que trabajar con las paletas que nos proporciona Material UI, aplicarlas a clases de estilos y usar estas clases para definir cada tema. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Referencias
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Web de Material Angular](https://material.angular.io/guide/theming)
+[Youtube - Josue Baez](https://www.youtube.com/watch?v=yP82A-R8uTE)
